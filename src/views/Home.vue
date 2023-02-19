@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <Quote class="row" />
+        <Quote class="row mb-4" />
     </main>
 </template>
 <script>

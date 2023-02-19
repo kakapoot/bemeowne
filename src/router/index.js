@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import Home from "../views/Home.vue"
 import Search from "../views/Search.vue"
+import CatDetails from "../views/CatDetails.vue"
 const routes = [
     {
         path: "/",
@@ -11,6 +12,11 @@ const routes = [
         path: "/search",
         name: "Search",
         component: Search
+    },
+    {
+        path: "/cat/:id",
+        name: "CatDetails",
+        component: CatDetails
     },
 ]
 const router = createRouter({

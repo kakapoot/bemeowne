@@ -1,48 +1,41 @@
 <template>
-    <main class="d-flex justify-content-center container">
+    <main class="d-flex flex-column align-items-center justify-content-center container">
+        <Searchbar />
         <div v-if="loading" class="spinner-border text-primary row" style="width: 5rem; height: 5rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
-        <ul v-else class="p-5 row row-cols-md-2 row-cols-lg-3 g-5">
-            <Card v-for="cat in cats" :imgSrc="cat.url" :breed="cat.breeds[0].name" :country="cat.breeds[0].country_code"
-                :description="cat.breeds[0].temperament" />
-        </ul>
+        <div v-if="error" class="text-light fs-4">{{ error }}</div>
+        <div v-if="cats" class="row row-cols-md-2 row-cols-lg-3 g-5">
+            <Card v-for="cat in cats" :key="cat.id" :id="cat.id" :imgSrc="cat.url" :breed="cat.breeds[0].name"
+                :country="cat.breeds[0].country_code" :description="cat.breeds[0].temperament" />
+        </div>
     </main>
 </template>
 <script>
 import Card from "../components/Card.vue";
+import Searchbar from "../components/Searchbar.vue"
+import FetchData from "../mixins/FetchData";
+
 export default {
     name: "Search",
-    components: { Card },
+    components: { Card, Searchbar },
     data() {
         return {
-            loading: false,
-            error: null,
+            breeds: null,
             cats: null
         }
     },
+    mixins: [FetchData],
     methods: {
-        async fetchData() {
-            this.loading = true
-            try {
-                const response = await fetch("https://api.thecatapi.com/v1/images/search?has_breeds=true&order=RAND&page=0&limit=6", {
-                    method: "GET",
-                    headers: {
-                        "x-api-key": import.meta.env.VITE_THECATAPI_KEY
-                    }
+        fetchSearchResult() {
+            this.fetchData("https://api.thecatapi.com/v1/images/search?has_breeds=true&order=RAND&page=0&limit=6")
+                .then((fetchedData) => {
+                    this.cats = fetchedData
                 })
-                const data = await response.json()
-                this.cats = data
-                console.log(this.cats)
-            } catch (error) {
-                this.error = error.toString()
-            } finally {
-                this.loading = false
-            }
         }
     },
-    mounted() {
-        this.fetchData()
+    created() {
+        this.fetchSearchResult()
     },
 }
 </script>
