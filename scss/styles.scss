@@ -1,9 +1,19 @@
-$primary: rgb(234, 55, 88);
+$primary: #ea3758;
 
 .form-select {
     max-height: 300px;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.favourited,
+.unfavourited:hover {
+    fill: $primary;
+}
+
+.unfavourited,
+.favourited:hover {
+    fill: #000000;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap"
