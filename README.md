@@ -13,10 +13,12 @@ This project was built as an assignment for an internship application at Accredi
 - Jest + Vue Test Utils
 
 ## Project Setup
-How to run the project locally:
+View the project online [here](https://bemeowne-catapi.netlify.app/)!
+
+... or run the project locally:
 1. Download the app source code by cloning this GitHub repository
 ```sh
-git clone ...
+git clone https://github.com/kakapoot/bemeowne.git
 ```
 2. Download required dependencies in terminal using Node package manager
 ```sh
@@ -24,22 +26,18 @@ npm install
 ```
 3. Compile and run the app server
 
- Compile and Hot-Reload for Development
-
-```sh
-npm run serve
-```
-Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-Testing
-
-```sh
-npm run test:unit
-```
+> Compile and Hot-Reload for Development
+> ```sh
+> npm run serve
+> ```
+> Compile and Minify for Production
+> ```sh
+> npm run build
+> ```
+> Testing
+> ```sh
+> npm run test:unit
+> ```
 
 4. View the locally hosted app in your browser (eg. http://localhost:8080/)
 
