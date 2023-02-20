@@ -4,11 +4,14 @@
             Pawtential
             Partners</button>
         <Searchbar @select-breed="selectBreed" v-if="breeds" :breeds="breeds" />
+
         <div v-if="loading" class="spinner-border text-primary row" style="width: 5rem; height: 5rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         <div v-if="error" class="text-light fs-4">{{ error }}</div>
-        <div v-if="!error && !loading && cats" class="row row-cols-md-2 row-cols-lg-3 g-5">
+        <div v-if="canDisplayContent(cats) && cats.length === 0" class="text-light fs-4">No cats found :(</div>
+
+        <div v-if="canDisplayContent(cats)" class="row row-cols-md-2 row-cols-lg-3 g-5">
             <Card v-for="cat in cats" :key="cat.id" :id="cat.id" :imgSrc="cat.url" :breed="cat.breeds[0].name"
                 :country="cat.breeds[0].country_code" :description="cat.breeds[0].temperament" />
         </div>
@@ -48,6 +51,7 @@ export default {
                 .then((fetchedData) => {
                     this.cats = fetchedData
                 })
+
         },
 
         selectBreed(id) {
@@ -57,7 +61,8 @@ export default {
     created() {
         this.fetchBreeds()
         this.fetchSearchResult()
-    }, watch: {
+    },
+    watch: {
         selectedBreedId: function () {
             this.fetchSearchResult()
         }

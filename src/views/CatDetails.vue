@@ -4,7 +4,8 @@
             <span class="visually-hidden">Loading...</span>
         </div>
         <div v-if="error" class="text-light fs-4">{{ error }}</div>
-        <div v-if="!error && !loading && catDetails">
+
+        <div v-if="canDisplayContent(catDetails)">
             <div class="row g-5">
                 <div class="col-xl-5">
                     <div
@@ -20,7 +21,7 @@
                     <div class="p-5 bg-light rounded-4 col d-flex flex-column justify-content-center">
                         <h1 class="fs-3 fw-semibold">{{ catDetails.temperament }}</h1>
                         <p class="fs-5">{{ catDetails.description }}</p>
-                        <Statbar v-for="value, key in catDetails.stats" :name="key" :value="value" />
+                        <Statbar v-for="value, key in catDetails.stats" :name="key" :value="value" :key="key" />
                     </div>
                 </div>
             </div>

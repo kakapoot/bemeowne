@@ -1,29 +1,44 @@
-# accredify-catapi
+# BeMeowne
+BeMeowne is a web search app for cats to find their purrfect partner! :3
 
-This template should help get you started developing with Vue 3 in Vite.
+## What this project is about
+A mini frontend project which fetches data from [The Cat API](https://thecatapi.com/) to  display details and images of random cats, and allow the user to search cats according to breeds.
 
-## Recommended IDE Setup
+This project was built as an assignment for an internship application at Accredify, with the requirements of a frontend built in Vue 3 with at least 1 API integration, at least 2 routes, and unit testing with Jest.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Technologies Used
+- Vue.js + Vue CLI
+- Vue Router
+- Bootstrap
+- Jest + Vue Test Utils
 
 ## Project Setup
-
+How to run the project locally:
+1. Download the app source code by cloning this GitHub repository
+```sh
+git clone ...
+```
+2. Download required dependencies in terminal using Node package manager
 ```sh
 npm install
 ```
+3. Compile and run the app server
 
-### Compile and Hot-Reload for Development
+ Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+npm run serve
 ```
-
-### Compile and Minify for Production
+Compile and Minify for Production
 
 ```sh
 npm run build
 ```
+
+4. View the locally hosted app in your browser (eg. http://localhost:8080/)
+
+## Design Considerations
+- **Responsive User Interface:** Used Bootstrap to quickly build a responsive web layout compatible for different screen sizes. Indicators are displayed when loading pages.
+- **Error Handling:** Implemented handling for errors such as unable to fetch data from API, 404 page not found.
+- **Reusability:** Broke down and encapsulated elements of the application into smaller Components for reusability and maintainability. Used mixins to reuse code functionality of fetching of data from API.
+- **Project Structure**: Predictable and organized file structure for the codebase for maintainability and scalability.

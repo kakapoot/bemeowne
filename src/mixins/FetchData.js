@@ -13,7 +13,7 @@ export default {
                 const response = await fetch(url, {
                     method: "GET",
                     headers: {
-                        "x-api-key": import.meta.env.VITE_THECATAPI_KEY
+                        "x-api-key": process.env.VUE_APP_THECATAPI_KEY
                     }
                 })
                 const data = await response.json()
@@ -25,5 +25,8 @@ export default {
                 this.loading = false
             }
         },
+        canDisplayContent(data) {
+            return (!this.error && !this.loading && data) ? true : false
+        }
     }
 }
