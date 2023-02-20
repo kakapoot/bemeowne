@@ -35,6 +35,12 @@ Compile and Minify for Production
 npm run build
 ```
 
+Testing
+
+```sh
+npm run test:unit
+```
+
 4. View the locally hosted app in your browser (eg. http://localhost:8080/)
 
 ## Design Considerations
@@ -42,4 +48,5 @@ npm run build
 - **Error Handling:** Implemented handling for errors such as unable to fetch data from API, 404 page not found.
 - **Reusability:** Broke down and encapsulated elements of the application into smaller Components for reusability and maintainability. Used mixins to reuse code functionality of fetching of data from API.
 - **Project Structure**: Predictable and organized file structure for the codebase for maintainability and scalability.
-- *Extra Notes: I initially wanted to implement a Favourites feature where users can "favourite" and "unfavourite" cats and the user would then be able to view all their currently favourited cats, but had to scrap it due to time constraints. Since this was a small application, I had planned to use Vue's Reactivity API to maintain a simple global state to store the list of favourites. However for a larger-scale application, I would opt for a proper state management library or a database.*
+
+*Extra Notes: I initially wanted to implement a Favourites feature where users can "favourite" and "unfavourite" cats and the user would then be able to view all their currently favourited cats, but had to scrap it due to time constraints. Since this was a small application, I had planned to use Vue's Reactivity API to maintain a simple global state to store the list of favourites. However for a larger-scale application, I would opt for a proper state management library or a database.*
