@@ -6,7 +6,6 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto fs-5 fw-semibold">
                         <li class="nav-item"><router-link to="/search" href="" class="nav-link">Search</router-link></li>
-                        <li class="nav-item"><router-link to="/" class="nav-link">Favourites</router-link></li>
                     </ul>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

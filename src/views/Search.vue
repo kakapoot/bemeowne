@@ -1,9 +1,10 @@
 <template>
     <main class="d-flex flex-column align-items-center justify-content-center container mb-4">
-        <button type="button" @click="fetchSearchResult()" class="btn btn-lg btn-primary mb-4 text-light">Find More
+        <button :disabled="loading" type="button" @click="fetchSearchResult()"
+            class="btn btn-lg btn-primary mb-4 text-light">Find More
             Pawtential
             Partners</button>
-        <Searchbar @select-breed="selectBreed" v-if="breeds" :breeds="breeds" />
+        <Searchbar :disabled="loading" @select-breed="selectBreed" v-if="breeds" :breeds="breeds" />
 
         <div v-if="loading" class="spinner-border text-primary row" style="width: 5rem; height: 5rem;" role="status">
             <span class="visually-hidden">Loading...</span>

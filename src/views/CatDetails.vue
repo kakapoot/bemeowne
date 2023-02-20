@@ -14,7 +14,6 @@
                             style="width: 400px; height:400px; object-fit:cover;" alt="">
                         <h1 class="mt-4 display-5 fw-bold">{{ catDetails.breedName }}</h1>
                         <p class="fs-3">{{ catDetails.country }}</p>
-                        <Favourite />
                     </div>
                 </div>
                 <div class="col">
@@ -30,12 +29,11 @@
 </template>
 <script>
 import Statbar from '../components/Statbar.vue'
-import Favourite from '../components/Favourite.vue'
 import FetchData from '../mixins/FetchData'
 
 export default {
     name: "CatDetails",
-    components: { Statbar, Favourite },
+    components: { Statbar },
     data() {
         return {
             id: this.$route.params.id,

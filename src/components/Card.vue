@@ -6,7 +6,6 @@
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <router-link :to="`/cat/${id}`"><button type="button" class="btn btn-lg btn-primary text-light">View
                             Details</button></router-link>
-                    <Favourite />
                 </div>
                 <h3 class="card-title">{{ breed }}, <strong>{{ country }}</strong></h3>
                 <p class="card-text fs-5">{{ description }}</p>
@@ -15,7 +14,6 @@
     </div>
 </template>
 <script>
-import Favourite from './Favourite.vue';
 
 export default {
     name: "Card",
@@ -26,7 +24,6 @@ export default {
         description: String,
         id: String
     },
-    components: { Favourite }
 }
 </script>
 <style></style>
