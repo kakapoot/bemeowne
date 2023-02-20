@@ -16,7 +16,7 @@ This project was built as an assignment for an internship application at Accredi
 How to run the project locally:
 1. Download the app source code by cloning this GitHub repository
 ```sh
-git clone https://github.com/kakapoot/bemeowne.git
+git clone ...
 ```
 2. Download required dependencies in terminal using Node package manager
 ```sh
