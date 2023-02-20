@@ -8,7 +8,7 @@
             <span class="visually-hidden">Loading...</span>
         </div>
         <div v-if="error" class="text-light fs-4">{{ error }}</div>
-        <div v-if="!loading && cats" class="row row-cols-md-2 row-cols-lg-3 g-5">
+        <div v-if="!error && !loading && cats" class="row row-cols-md-2 row-cols-lg-3 g-5">
             <Card v-for="cat in cats" :key="cat.id" :id="cat.id" :imgSrc="cat.url" :breed="cat.breeds[0].name"
                 :country="cat.breeds[0].country_code" :description="cat.breeds[0].temperament" />
         </div>

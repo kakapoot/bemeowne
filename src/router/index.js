@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router"
 import Home from "../views/Home.vue"
 import Search from "../views/Search.vue"
 import CatDetails from "../views/CatDetails.vue"
+import PageNotFound from "../views/PageNotFound.vue"
+
 const routes = [
     {
         path: "/",
@@ -17,6 +19,11 @@ const routes = [
         path: "/cat/:id",
         name: "CatDetails",
         component: CatDetails
+    },
+    {
+        path: "/:pathMatch(.*)*",
+        name: "PageNotFound",
+        component: PageNotFound
     },
 ]
 const router = createRouter({
